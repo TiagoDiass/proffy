@@ -1,14 +1,16 @@
 import { resolve } from 'path';
 
-export default {
-  client: 'sqlite3',
-  connection: {
-    filename: resolve(__dirname, 'src', 'database', 'database.sqlite'),
-  },
+module.exports = {
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: resolve(__dirname, 'src', 'database', 'database.sqlite'),
+    },
 
-  migrations: {
-    directory: resolve(__dirname, 'src', 'database', 'migrations'),
-  },
+    migrations: {
+      directory: resolve(__dirname, 'src', 'database', 'migrations'),
+    },
 
-  useNullAsDefault: true,
+    useNullAsDefault: true,
+  },
 };
