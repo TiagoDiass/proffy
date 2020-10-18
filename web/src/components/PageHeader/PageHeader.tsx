@@ -7,7 +7,11 @@ import logoImg from '../../assets/images/logo.svg';
 
 import './PageHeader.styles.scss';
 
-function PageHeader() {
+interface PageHeaderProps {
+  title: string;
+}
+
+const PageHeader: React.FunctionComponent<PageHeaderProps> = ({ title, children }) => {
   return (
     <header className="page-header">
       <div className="top-bar-container">
@@ -18,10 +22,11 @@ function PageHeader() {
       </div>
 
       <div className="header-content">
-        <strong>Estes são os proffys disponíveis.</strong>
+        <strong>{title}</strong>
+        {children}
       </div>
     </header>
   );
-}
+};
 
 export default PageHeader;
