@@ -51,6 +51,10 @@ textarea {
   color: var(--color-text-base);
 }
 
+button {
+  outline: none;
+}
+
 .container {
   width: 90vw;
   max-width: 700px;

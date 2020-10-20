@@ -34,6 +34,10 @@
           margin-top: 0;
         }
       }
+
+      .select-block + .select-block {
+        margin-top: 0;
+      }
     }
 
     main {
