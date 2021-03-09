@@ -3,6 +3,7 @@ import { Input, PageHeader } from '../../components';
 
 // Assets
 import './TeacherForm.styles.scss';
+import warningIcon from '../../assets/images/icons/warning.svg';
 
 const TeacherForm: React.FC = () => {
   return (
@@ -20,6 +21,22 @@ const TeacherForm: React.FC = () => {
           <Input name='avatar' label='Avatar' />
           <Input name='whatsapp' label='Whatsapp' />
         </fieldset>
+
+        <fieldset>
+          <legend>Sobre a aula</legend>
+
+          <Input name='subject' label='Matéria' />
+          <Input name='cost' label='Custo da sua hora por aula' type='number' />
+        </fieldset>
+
+        <footer>
+          <p>
+            <img src={warningIcon} alt='Aviso importante' />
+            Importante! <br />
+            Preencha todos os dados
+          </p>
+          <button type='button'>Salvar cadastro</button>
+        </footer>
       </main>
     </div>
   );
