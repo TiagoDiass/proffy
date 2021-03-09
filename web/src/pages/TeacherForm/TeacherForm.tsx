@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, PageHeader } from '../../components';
+import { Input, PageHeader, Textarea } from '../../components';
 
 // Assets
 import './TeacherForm.styles.scss';
@@ -20,6 +20,7 @@ const TeacherForm: React.FC = () => {
           <Input name='name' label='Nome completo' />
           <Input name='avatar' label='Avatar' />
           <Input name='whatsapp' label='Whatsapp' />
+          <Textarea name='bio' label='Biografia' />
         </fieldset>
 
         <fieldset>
