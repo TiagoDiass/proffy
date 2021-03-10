@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaTimes } from 'react-icons/fa';
 import { Input, PageHeader, Select, Textarea } from '../../components';
 
 // Assets
