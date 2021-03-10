@@ -80,7 +80,7 @@ export default class ClassesController {
     } catch (error) {
       trx.rollback();
       return res.status(400).json({
-        error: 'Unexpected while creating new class',
+        error: 'Erro inesperado ao cadastrar aula',
       });
     }
   }
