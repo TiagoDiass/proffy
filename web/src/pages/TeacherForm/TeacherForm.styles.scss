@@ -37,7 +37,8 @@
         border-bottom: 1px solid $color-line-in-white;
       }
 
-      .input-block + .textarea-block {
+      .input-block + .textarea-block,
+      .select-block + .input-block {
         margin-top: 2.4rem;
       }
     }
