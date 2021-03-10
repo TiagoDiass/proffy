@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaTimes } from 'react-icons/fa';
 import { Input, PageHeader, Select, Textarea } from '../../components';
 
 // Assets
 import './TeacherForm.styles.scss';
 import warningIcon from '../../assets/images/icons/warning.svg';
 
+type ScheduleItem = {
+  week_day: number;
+  from: string;
+  to: string;
+};
+
 const TeacherForm: React.FC = () => {
+  const [scheduleItems, setScheduleItems] = useState<ScheduleItem[]>([
+    { week_day: 0, from: '', to: '' },
+  ]);
+
+  const addNewScheduleItem = () =>
+    setScheduleItems([...scheduleItems, { week_day: 0, from: '', to: '' }]);
+
   return (
     <div id='page-teacher-form' className='container'>
       <PageHeader
@@ -42,6 +56,42 @@ const TeacherForm: React.FC = () => {
             ]}
           />
           <Input name='cost' label='Custo da sua hora por aula' type='number' />
+        </fieldset>
+
+        <fieldset>
+          <legend>
+            Horários disponíveis
+            <button type='button' onClick={addNewScheduleItem}>
+              + Novo horário
+            </button>
+          </legend>
+
+          {scheduleItems.map((scheduleItem, index) => {
+            return (
+              <div className='schedule-item' key={index}>
+                <Select
+                  label='Dia da semana'
+                  name='week_day'
+                  options={[
+                    { value: '0', label: 'Domingo' },
+                    { value: '1', label: 'Segunda-feira' },
+                    { value: '2', label: 'Terça-feira' },
+                    { value: '3', label: 'Quarta-feira' },
+                    { value: '4', label: 'Quinta-fe ira' },
+                    { value: '5', label: 'Sexta-feira' },
+                    { value: '6', label: 'Sábado' },
+                  ]}
+                />
+
+                <Input name='from' label='Das' type='time' />
+                <Input name='to' label='Até' type='time' />
+
+                {/* <button type='button' onClick={() => removeScheduleItem(index)}>
+                  <FaTimes />
+                </button> */}
+              </div>
+            );
+          })}
         </fieldset>
 
         <footer>

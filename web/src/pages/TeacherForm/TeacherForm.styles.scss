@@ -35,6 +35,21 @@
         width: 100%;
         padding-bottom: 1.6rem;
         border-bottom: 1px solid $color-line-in-white;
+
+        // Botão de adicionar dia da semana pra dar aula
+        button {
+          background: none;
+          border: none;
+          outline: none;
+          color: $color-primary;
+          font: 700 1.6rem Archivo;
+          cursor: pointer;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $color-primary-dark;
+          }
+        }
       }
 
       .input-block + .textarea-block,
@@ -88,6 +103,10 @@
         }
       }
     }
+
+    .schedule-item button {
+      display: none;
+    }
   }
 }
 
@@ -102,6 +121,40 @@
     main {
       fieldset {
         padding: 0 6.4rem;
+      }
+
+      .schedule-item {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1.6rem;
+
+        .input-block {
+          margin-top: 0 !important;
+        }
+
+        & + .schedule-item {
+          margin-top: 2rem;
+        }
+
+        button {
+          display: block;
+          height: 5.4rem;
+          align-self: end;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          outline: none;
+          border: 0;
+          border-radius: 0.9rem;
+          background-color: #ec7063;
+          color: $color-button-text;
+          transition: all 0.2s ease;
+          cursor: pointer;
+
+          &:hover {
+            filter: brightness(0.95);
+          }
+        }
       }
 
       footer {
