@@ -96,10 +96,16 @@
         justify-content: center;
         text-decoration: none;
         margin-top: 3.2rem;
-        transition: background 0.25s ease;
+        transition: all 0.25s ease;
 
         &:hover {
           background: $color-secondary-dark;
+        }
+
+        &:disabled {
+          opacity: 0.8;
+          background: $color-secondary !important;
+          cursor: initial;
         }
       }
     }
