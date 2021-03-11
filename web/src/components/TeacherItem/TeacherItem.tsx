@@ -10,6 +10,8 @@ type Props = {
 };
 
 const TeacherItem: React.FC<Props> = ({ teacher }) => {
+  const teacherFirstName = teacher.name.split(' ')[0];
+
   return (
     <article className='teacher-item'>
       <header>
@@ -29,10 +31,14 @@ const TeacherItem: React.FC<Props> = ({ teacher }) => {
           <strong>R$ {teacher.cost}</strong>
         </p>
 
-        <button type='button'>
+        <a
+          href={`https://wa.me/55${teacher.whatsapp}?text=Olá ${teacherFirstName}`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <img src={whatsappIcon} alt='Whatsapp' />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );
