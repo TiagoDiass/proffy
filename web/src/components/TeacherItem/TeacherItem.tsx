@@ -3,6 +3,7 @@ import React from 'react';
 // Assets
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 import { Teacher } from '../../pages/TeacherList/TeacherList';
+import { api } from '../../services';
 import './TeacherItem.styles.scss';
 
 type Props = {
@@ -11,6 +12,12 @@ type Props = {
 
 const TeacherItem: React.FC<Props> = ({ teacher }) => {
   const teacherFirstName = teacher.name.split(' ')[0];
+
+  const createNewConnection = async () => {
+    await api.post('/connections', {
+      user_id: teacher.id,
+    });
+  };
 
   return (
     <article className='teacher-item'>
@@ -32,6 +39,7 @@ const TeacherItem: React.FC<Props> = ({ teacher }) => {
         </p>
 
         <a
+          onClick={createNewConnection}
           href={`https://wa.me/55${teacher.whatsapp}?text=Olá ${teacherFirstName}`}
           target='_blank'
           rel='noopener noreferrer'
