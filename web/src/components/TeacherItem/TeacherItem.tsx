@@ -2,35 +2,31 @@ import React from 'react';
 
 // Assets
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import { Teacher } from '../../pages/TeacherList/TeacherList';
 import './TeacherItem.styles.scss';
 
-const TeacherItem: React.FC = () => {
+type Props = {
+  teacher: Teacher;
+};
+
+const TeacherItem: React.FC<Props> = ({ teacher }) => {
   return (
     <article className='teacher-item'>
       <header>
-        <img
-          src='https://dcnt5qvi2hv76.cloudfront.net/b5335837/resize_cache/304069/23365dd92c1f65a6eb81283cfddb6812/main/a64/a646cc7a3715596b68e1c9c648dd1a24/pic.png'
-          alt='Tiago Dias'
-        />
+        <img src={teacher.avatar} alt={teacher.name} />
 
         <div>
-          <strong>Tiago Dias</strong>
-          <span>Matemática</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
 
-      <p>
-        Entusiasta das melhores fórmulas de equações de segundo grau
-        <br />
-        <br />
-        Apaixonado por resolver problemas matemáticos e por mudar a vida das
-        pessoas através de logaritmos
-      </p>
+      <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>R$ 35,00</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
 
         <button type='button'>
