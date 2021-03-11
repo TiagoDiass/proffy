@@ -8,16 +8,10 @@ import 'react-toastify/dist/ReactToastify.min.css';
 const App: React.FC = () => {
   return (
     <>
-      <Routes />;
+      <Routes />
       <ToastContainer />
     </>
   );
 };
-
-// position='top-right'
-//         autoClose={4500}
-//         hideProgressBar={false}
-//         closeOnClick
-//         pauseOnHover
 
 export default App;
